@@ -1,13 +1,5 @@
 #!/bin/sh
 
-# inbox unread spam deleted archive personal house purchases dev go money events
-# add tags
-# tag stuff that I dont't need to respond to and remove from inbox
-# tag junk and remove from inbox
-# manually handle the rest
-
-
-
 echo ""
 echo "--> Tagging new mail"
 notmuch new
@@ -15,7 +7,8 @@ notmuch new
 echo "--> Tagging sent mail/drafts"
 notmuch tag -inbox -unread +sent +hotmail -- from:sjbrown@live.co.uk   and not tag:sent
 notmuch tag -inbox -unread +sent +gmail   -- from:quadturtle@gmail.com and not tag:sent 
-notmuch tag -inbox -unread +drafts +gmail -- folder:drafts and not tag:drafts 
+notmuch tag -inbox -unread +draft +gmail -- folder:drafts and not tag:draft
+notmuch tag -inbox -unread +draft +gmail -- folder:draft and not tag:draft
 
 echo "--> Tag source account"
 notmuch tag +hotmail -- to:sjbrown@live.co.uk   and not tag:hotmail 
