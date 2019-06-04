@@ -10,9 +10,9 @@ case $ABS_PATH in
     ABS_PATH=`echo $ABS_PATH | sed "s~$HOME~$ROOT~"`
     ;;
 esac
-
+echo $ABS_PATH
 WIN_PATH=`echo $ABS_PATH |
-    sed 's~/mnt/\([a-zA-Z]\)/\(.*\)~\1:\\\\\2~' | 
+    sed 's~/mnt/\([a-zA-Z]\)/\(.*\)~\1:\\\\\\\\\2~' | 
     sed 's~/~\\\\\\\\~g'`
 
 echo $WIN_PATH
